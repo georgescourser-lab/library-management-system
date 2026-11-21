@@ -37,10 +37,12 @@ model Book {
   isbn        String   @unique
   publishedAt DateTime?
   genreId     Int
-  genre       Genre    @relation(fields: [genreId], references: [id])
+  genre       Genre    @relation(fields: [genreId], references: [id], onDelete: Restrict)
   reviews     Review[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@index([genreId])
 }
 
 model Review {

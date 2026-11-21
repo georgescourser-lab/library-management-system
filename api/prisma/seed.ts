@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  const genreNames = ['Fiction', 'Science Fiction', 'Mystery', 'Biography'];
+  const genreNames = ['Fiction', 'Science Fiction', 'Mystery', 'Biography', 'Fantasy'];
 
   const genres = await Promise.all(
     genreNames.map((name) =>
@@ -15,7 +15,7 @@ async function main() {
     ),
   );
 
-  const [fiction, scienceFiction, mystery, biography] = genres;
+  const [fiction, scienceFiction, mystery, biography, fantasy] = genres;
 
   const books = [
     { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', isbn: '9780743273565', genreId: fiction.id },
@@ -34,6 +34,10 @@ async function main() {
     { title: 'The Diary of a Young Girl', author: 'Anne Frank', isbn: '9780553577129', genreId: biography.id },
     { title: 'Steve Jobs', author: 'Walter Isaacson', isbn: '9781451648539', genreId: biography.id },
     { title: 'Becoming', author: 'Michelle Obama', isbn: '9781524763138', genreId: biography.id },
+    { title: 'The Hobbit', author: 'J. R. R. Tolkien', isbn: '9780547928227', genreId: fantasy.id },
+    { title: 'A Wizard of Earthsea', author: 'Ursula K. Le Guin', isbn: '9780547773742', genreId: fantasy.id },
+    { title: 'The Name of the Wind', author: 'Patrick Rothfuss', isbn: '9780756404734', genreId: fantasy.id },
+    { title: 'Mistborn: The Final Empire', author: 'Brandon Sanderson', isbn: '9780765350381', genreId: fantasy.id },
   ];
 
   await prisma.book.createMany({

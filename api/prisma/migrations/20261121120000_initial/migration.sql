@@ -47,6 +47,7 @@ CREATE TABLE "Review" (
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 CREATE UNIQUE INDEX "Genre_name_key" ON "Genre"("name");
 CREATE UNIQUE INDEX "Book_isbn_key" ON "Book"("isbn");
+CREATE INDEX "Book_genreId_idx" ON "Book"("genreId");
 CREATE UNIQUE INDEX "Review_bookId_userId_key" ON "Review"("bookId", "userId");
 
 ALTER TABLE "Book"

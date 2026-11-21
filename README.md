@@ -15,8 +15,13 @@ With Prisma, relations are explicit and foreign keys are represented through sca
 1. Copy `api/.env.example` to `api/.env` and replace the placeholder values with your hosted PostgreSQL connection string.
 2. Install dependencies: `npm install`
 3. Generate Prisma Client: `npm run prisma:generate`
-4. Apply migrations: `npm run prisma:migrate`
-5. Seed the database: `npm run prisma:seed`
+4. Apply the Prisma migration: `npm run prisma:migrate`
+5. Run the seed: `npm run prisma:seed`
+6. Verify the required assignment structure: `npm run verify:assignment`
+
+Do not commit `api/.env` or a real database URL. A migration must be applied to the hosted PostgreSQL database before running the seed.
+
+The seed inserts 5 genres and 20 books (4 books per genre).
 
 ## Scripts
 
