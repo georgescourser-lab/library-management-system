@@ -4,6 +4,7 @@
   "scripts": {
     "start": "ts-node api/src/main.ts",
     "start:dev": "ts-node api/src/main.ts",
+    "verify:assignment": "node scripts/verify-assignment.mjs",
     "prisma:generate": "prisma generate --schema=api/prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --schema=api/prisma/schema.prisma",
     "prisma:seed": "ts-node api/prisma/seed.ts"

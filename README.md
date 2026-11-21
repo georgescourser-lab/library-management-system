@@ -4,7 +4,7 @@
 
 The catalog uses Prisma with PostgreSQL and includes `User`, `Role`, `Genre`, `Book`, and `Review` models.
 
-### Schema Decisions
+## Schema Decisions
 
 A `Book` references a `Genre` through `genreId` and a Prisma `@relation`, rather than embedding the genre name or an entire genre object in every book. This keeps genre data normalized, prevents inconsistent names, allows a genre to have many books, and makes adding or updating genre metadata possible from one place.
 
